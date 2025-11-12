@@ -600,12 +600,12 @@ body {
 }
 
 .form-group button.cta-button {
-    width: 100%; /* Кнопка на всю ширину */
+    width: 100%;
 }
 
-/* Адаптивність для нових блоків */
+
 @media (max-width: 768px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* 1 колонка на мобільних */
+        grid-template-columns: 1fr; 
     }
 }
