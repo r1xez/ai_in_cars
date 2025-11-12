@@ -1,29 +1,31 @@
-// Плавна поява елементів при скролі
-// Елементи повинні мати клас `reveal` у розмітці.
+
 document.addEventListener('DOMContentLoaded', () => {
   const reveals = document.querySelectorAll('.reveal');
 
-  // Використовуємо IntersectionObserver, якщо доступний
+  
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          obs.unobserve(entry.target); // показати лише один раз
+        } else {
+          entry.target.classList.remove('active');
         }
       });
     }, { threshold: 0.12 });
 
     reveals.forEach(el => observer.observe(el));
   } else {
-    // Фолбек для старих браузерів: перевірка при скролі
+ 
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
       reveals.forEach(el => {
-        if (el.classList.contains('active')) return;
         const rect = el.getBoundingClientRect();
-        if (rect.top <= windowHeight * 0.95) {
+        const inView = rect.top <= windowHeight * 0.95 && rect.bottom >= 0;
+        if (inView) {
           el.classList.add('active');
+        } else {
+          el.classList.remove('active');
         }
       });
     };
