@@ -192,6 +192,8 @@ body {
 
 .benefit-item:hover {
     background: rgba(255, 255, 255, 0.2);
+    
+
 }
 
 .benefit-icon {
@@ -255,22 +257,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* === FOOTER === */
-.footer {
-    background: #34495e;
-    color: white;
-    padding: 50px 0;
-    text-align: center;
-}
 
-.footer-content {
-    margin-bottom: 30px;
-}
-
-.footer h3 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
 
 .whoDo {
     font-size: 24px;
@@ -372,9 +359,7 @@ body {
         gap: 20px;
     }
 
-    .footer {
-        padding: 40px 20px;
-    }
+   
 
     .whoDo {
         font-size: 20px;
@@ -388,3 +373,239 @@ body {
     }
 }
 
+
+/* === НОВИЙ ОДНОРІВНЕВИЙ HEADER (згідно скріншоту) === */
+.site-header-single {
+    background: #2c3e50; /* Ваш темний колір */
+    padding: 15px 0;
+    border-bottom: 2px solid #667eea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-single-container {
+    display: flex;
+    justify-content: space-between; /* Лого зліва, група - справа */
+    align-items: center;
+}
+
+/* Логотип */
+.logo-pro {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white; /* Білий колір */
+    text-decoration: none;
+    flex-shrink: 0; /* Не стискати лого */
+}
+
+/* Нова обгортка для правого боку */
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Простір між навігацією та кнопкою */
+}
+
+/* Навігація */
+.main-nav-pro {
+    display: block;
+}
+.main-nav-pro ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+.main-nav-pro a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.main-nav-pro a:hover {
+    color: #ff6b6b; /* Ваш акцентний колір */
+}
+
+/* Кнопка "Контакти" */
+.header-cta-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.header-cta-button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+}
+
+/* "Бургер" */
+.menu-toggle-pro {
+    display: none; /* Схований на ПК */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- Адаптивність (Мобільна версія) --- */
+@media (max-width: 768px) {
+    
+    /* Показуємо "бургер" */
+    .menu-toggle-pro {
+        display: block;
+    }
+
+    /* Ховаємо праву групу за замовчуванням */
+    .header-right-group {
+        display: none;
+    }
+
+    /* Стилі для мобільного меню, коли воно активне */
+    .header-right-group.active {
+        display: block;
+        position: absolute;
+        /* Динамічно розраховуємо висоту хедера */
+        top: calc(100% + 2px); 
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        z-index: 999;
+    }
+
+    /* Налаштовуємо внутрішні елементи в мобільному меню */
+    .header-right-group.active .main-nav-pro ul {
+        flex-direction: column; /* Вертикально */
+        gap: 0;
+    }
+    .header-right-group.active .main-nav-pro a {
+        color: #333; /* Темний текст */
+        display: block;
+        padding: 15px 10px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .header-right-group.active .main-nav-pro a:hover {
+        background: #f8f9fa;
+    }
+    
+    /* Кнопка "Контакти" в мобільному меню */
+    .header-right-group.active .header-cta-button {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+/* === СТИЛІ ДЛЯ СТОРІНКИ НОВИН (news.html, blog.html) === */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.news-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.news-item h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Робить заголовки однакової висоти */
+}
+
+.news-item p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* === СТИЛІ ДЛЯ СТОРІНКИ КОНТАКТІВ (contact.html) === */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* 2 колонки */
+    gap: 40px;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+.contact-info p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.form-group button.cta-button {
+    width: 100%; /* Кнопка на всю ширину */
+}
+
+/* Адаптивність для нових блоків */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобільних */
+    }
+}

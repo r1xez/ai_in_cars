@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти — ШІ в автомобілях</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header-single">
+    <div class="container header-single-container">
+        
+        <a href="index.html" class="logo-pro">🚗 AI в Авто</a>
+        
+        <div class="header-right-group">
+            <nav class="main-nav-pro">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_home">Головна</a></li>
+                    <li><a href="news.html" data-lang-key="nav_news">Новини</a></li>
+                    <li><a href="research.html" data-lang-key="nav_research">Дослідження</a></li>
+                    <li><a href="blog.html" data-lang-key="nav_blog">Блог</a></li>
+                    <li><a href="about.html" data-lang-key="nav_about">Про проєкт</a></li>
+                </ul>
+            </nav>
+            
+            <a href="contact.html" class="header-cta-button" data-lang-key="contact_button">Контакти</a>
+        </div>
+        
+        <button class="menu-toggle-pro" aria-label="Відкрити меню" aria-expanded="false">
+            &#9776; </button>
+        
+    </div>
+</header>
+
+
+    <section class="hero reveal">
+        <div class="container">
+            <h1>Контакти</h1>
+            <p>Маєте запитання? Зв'яжіться з нами</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <div class="contact-info reveal">
+                    <h3>Інформація</h3>
+                    <p>З питань співпраці, уточнення даних або пропозицій, будь ласка, використовуйте форму зворотного зв'язку або пряму електронну пошту.</p>
+                    
+                    <div class="benefit-item" style="background: #f8f9fa; margin-top: 20px;">
+                        <div class="benefit-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p style="color: #333; font-weight: 600;">slavik534226@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form reveal">
+                    <h3>Написати нам</h3>
+                    <div class="form-group">
+                        <label for="name">Ваше ім'я</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Ваш Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Повідомлення</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="cta-button">Надіслати</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+  
+    <script src="script.js"></script>
+</body>
+</html>
